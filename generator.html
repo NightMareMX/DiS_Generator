@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DIS-sensory overload</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #111;
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
+    h1, h2 {
+      margin-bottom: 10px;
+    }
+    button {
+      font-size: 16px;
+      padding: 10px 20px;
+      background-color: #FF0000;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    #output {
+    margin-top: 20px;
+    border: 4px solid #FF0000; /* Change color as needed */
+    padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>DIS-sensory overload</h1>
+  <button id="generateBtn">Glimps the VOID</button>
+  <div id="output"></div>
+
+  <script>
+    const sights = [
+  "Glowing control panels and holographic displays",
+  "Endless corridors stretching to the horizon",
+  "Giant observation windows overlooking space",
+  "A bustling interstellar market in the promenade",
+  "Maintenance robots performing repairs",
+  "Bioluminescent plants illuminating gardens",
+  "Glitched out HoloErotica adds",
+  "A gathering of TO THE OTHER (T.T.O.) cultists",
+  "A gathering of LLIAD SOMNIUM cultists",
+  "A gathering of MATERIA 1ST cultists",
+  "A group of PATHÎC cultists",
+  "Tired and run down workers returning from thier shift",
+  "Burnt out neon signs and flickering HoloVid screens",
+  "Rusted pipes run the length of the room",
+  "A labyrinthine metal shantytown",
+  "Hundreds of flickering work lights hanging from the ceiling",
+  "A large hangar space converted into living quarters",
+  "ancient looking letters and numbers painted on the ground",
+  "Showers of sparks eminating from a destroyed conduit",
+  "A haphazardly organized group of combat droids seemingly powered down",
+  "A single Void Shaman cloaked in tatered dark red pointing",
+  // ... add more items
+];
+    const sounds = [
+  "Low hum of machinery and engines",
+  "Clanking of metal footsteps",
+  "Whirring of automated cleaning bots",
+  "Distant chatter of crew members",
+  "Hiss of airlocks sealing shut",
+  "Occasional alarms and alerts",
+  "Faint hum of industrial engines in the distance",
+  "Background thrum of life support systems",
+  "Pulsating energy and static",
+  "Resonating echoes in wide hangars",
+  "Faint laughter and conversation",
+  "Gentle whoosh of automated doors",
+  "Eerie silence in abandoned sections",
+  "Distant rhythmic drumming sounds",
+  "Grumbling of engines idling",
+  "Etheric whispers and faint echoes",
+  "Hollow clangs in maintenance tunnels",
+  "Soft hum of AI interfaces",
+  // ... add more items
+];
+
+const smells = [
+  "Metallic tang of recycled air",
+  "Faint scent of ozone after energy discharge",
+  "A mix of various synthetic and natural odors",
+  "Warm aroma of freshly brewed synth coffee",
+  "Aromatic blend of food from different cultures",
+  "A faint trace of engine lubricants",
+  "Metallic scent of machinery and electronics",
+  "Antiseptic smell of medical bays",
+  "A hint of fuel and ionized particles",
+  "Subtle fragrance of blooming hydroponic gardens",
+  "Acrid tang of burnt circuitry and solder",
+  "Cool, sterile scent of science laboratories",
+  "A mix of alien spices and culinary delights",
+  "Faint undertone of recycled coolant",
+  "Smoky aroma from exhaust vents",
+  "Faint hint of burnt circuits and overheated components",
+  "Subtle scent of vacuum-sealed storage areas",
+  "Metallic tang from weapon and armor workshops",
+  "A mix of engine oil and electrical components",
+  "Fresh ozone from void shield generators",
+  // ... add more items
+];
+
+    const generateBtn = document.getElementById('generateBtn');
+    const output = document.getElementById('output');
+
+    generateBtn.addEventListener('click', generateRandomCombo);
+
+    function generateRandomCombo() {
+      const randomSight = getRandomItem(sights);
+      const randomSound = getRandomItem(sounds);
+      const randomSmell = getRandomItem(smells);
+
+      output.innerHTML = `
+        <h2>Sights:</h2>
+        <p>${randomSight}</p>
+        <h2>Sounds:</h2>
+        <p>${randomSound}</p>
+        <h2>Smells:</h2>
+        <p>${randomSmell}</p>
+      `;
+    }
+
+    function getRandomItem(array) {
+      return array[Math.floor(Math.random() * array.length)];
+    }
+  </script>
+</body>
+</html>
